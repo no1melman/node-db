@@ -1,0 +1,24 @@
+{
+  "name": "node-db",
+  "version": "1.0.0",
+  "description": "node based database",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node",
+    "build": "babel lib -d dist",
+    "serve": "node dist/index.js",
+    "test": "mocha --compilers js:babel-register --report progress tools/testSetup.js \"tests/**/*.spec.js\"",
+    "test:watch": "npm run test -- --watch"
+  },
+  "author": "Callum Linington",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "babel-register": "^6.23.0",
+    "eslint": "^3.17.0",
+    "expect": "^1.20.2",
+    "mocha": "^3.2.0"
+  }
+}
