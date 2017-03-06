@@ -54,6 +54,20 @@ describe('Given an empty tree', () => {
 
         });
 
+        it('it should have a maximum number of children', () =>{
+
+            const tree = new BTree();
+
+            // 5 nodes per leaf means 6 child nodes
+            // 5 * 6 = 30, there 31 should introduce a new root node
+            for (let i = 0; i < 31; i++) {
+                tree.addNode(new Node(i));
+            }
+
+            expect(tree.root.children.length).toBe(2);
+
+        });
+
         it('it should print the correct json structure', () => {
 
             const tree = new BTree();
